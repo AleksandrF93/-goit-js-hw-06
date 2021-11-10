@@ -9,12 +9,16 @@ const ingredients = [
 
 
 const navEl = document.querySelector('#ingredients');
-ingredients.map(ingredient => {
+
+  
+const elements = [];
+ingredients.forEach(ingredient => {
   const itemEl = document.createElement('li');
-  itemEl.classList.add('item');
   itemEl.textContent = ingredient;
-  navEl.append(itemEl);
+  itemEl.classList.add('item');
+  elements.push(itemEl)
 });
+navEl.append(...elements);
 
 
 

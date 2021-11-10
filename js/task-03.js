@@ -17,10 +17,7 @@ const gallery = document.querySelector('.gallery');
   gallery.style.display = "flex";
   gallery.style.justifyContent = "space-between";
 
-images.forEach(image => {
+
+const imgEl = images.map((image) => `<li> <img src = ${image.url} alt = ${image.alt} width = 300, height = 200></li>`);
   
-  gallery.insertAdjacentHTML('beforeend', `<li> <img src = ${image.url} alt = ${image.alt} width = 300, height = 200></li>`);
- 
-})
-  
-  
+  gallery.insertAdjacentHTML('beforeend', imgEl);
